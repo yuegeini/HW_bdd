@@ -1,3 +1,5 @@
+package data;
+
 import lombok.Value;
 
 import java.util.Random;

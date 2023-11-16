@@ -1,5 +1,11 @@
+package test;
+
+import data.DataHelper;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import page.DashboardPage;
+import page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,8 +35,8 @@ public class MoneyTransferTest {
         dashboardPage = transferPage.makeValidTransfer(String.valueOf(amount), firstCardInfo);
         var actualBalanceFirstCard = dashboardPage.getCardBalance(firstCardInfo);
         var actualBalanceSecondCard = dashboardPage.getCardBalance(secondCardInfo);
-        assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard);
-        assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
+        Assertions.assertEquals(expectedBalanceFirstCard, actualBalanceFirstCard);
+        Assertions.assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
     }
 
 }
